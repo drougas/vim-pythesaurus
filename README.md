@@ -8,7 +8,7 @@ The plugin displays the definition of the word under the cursor and a list of sy
 
 ![](screenshot.png)
 
-The credit for the original idea and (part of) code goes to [Nick Coleman](http://www.nickcoleman.org/) and [Anton Beloglazov](http://beloglazov.info/).
+The credit for the original idea and (part of) code and documentation effort goes to [Anton Beloglazov](http://beloglazov.info/) and [Nick Coleman](http://www.nickcoleman.org/).
 
 
 ## Installation
