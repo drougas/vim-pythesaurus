@@ -1,0 +1,42 @@
+*pythesaurus.txt*	Online thesaurus for Vim
+
+Author:  Yannis Drougas
+License: Same terms as Vim itself (see |license|)
+
+This plugin is only available if 'compatible' is not set.
+
+INTRODUCTION                                                *pythesaurus*
+
+This plugin provides a command for looking up words on http://thesaurus.com/
+
+The plugin displays the definition of the word under the cursor and a list of
+synonyms.
+
+The credit for the original idea and (some of the) code goes to Anton
+Beloglazov (http://beloglazov.info) and Nick Coleman
+(http://www.nickcoleman.org/).
+
+MAPPINGS                                           *pythesaurus-mappings*
+
+                                                 *:PyThesaurusCurrentWord*
+The plugin provides the |:PyThesaurusCurrentWord| command to look up the
+current word under the cursor in an online thesaurus.
+
+                                                                  *:PyThesaurus*
+Alternatively, you can look up any word with |:PyThesaurus|:
+>
+  :PyThesaurus word
+<
+Internally, both commands make a request to http://thesaurus.com/, parse the
+results, and display them in a vertical split in the bottom.
+
+CUSTOMIZATION                                 *pythesaurus-customization*
+
+                                                 *g:online_thesaurus_map_keys*
+You can map the |:PyThesaurusCurrentWord| command to anything you
+want as follows:
+>
+  nnoremap <your key binding> :PyThesaurusCurrentWord<CR>
+<
+
+ vim:tw=80:ts=4:ft=help:norl:
