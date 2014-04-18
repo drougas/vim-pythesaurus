@@ -1,15 +1,12 @@
 #!/usr/bin/env python
 """Gets thesaurus information about a word from thesaurus.com."""
 
-import httplib
 import re
+import urllib2
 import vim
 
-word = vim.eval('a:word').lower()
-conn = httplib.HTTPConnection('thesaurus.com')
-conn.request('GET', '/browse/' + word)
-lines = conn.getresponse().read().splitlines()
-conn.close()
+word = vim.eval('a:word').lower().strip()
+response = urllib2.urlopen('http://thesaurus.com/browse/' + word)
 
 ttl_re = re.compile(r'class="ttl">(.*)<')
 layer_re = re.compile(r'layer disabled')
@@ -24,7 +21,7 @@ synonyms = []
 antonyms = []
 flag = 0
 
-for line in lines:
+for line in response:
     if flag == 0:
         if definition.isspace() and words_re.search(line):
             flag = 1  # definition
