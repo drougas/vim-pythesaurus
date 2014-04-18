@@ -14,9 +14,14 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 let s:path = escape(expand('<sfile>:p:h'), ' \')
+let s:buf_name = 'PyThesaurus results'
 
 function! s:Lookup(word)
-    silent keepalt belowright split pythesaurus
+    let l:buf_num = bufnr(s:buf_name)
+    if l:buf_num > 0
+        exec 'bdelete! ' . l:buf_num
+    endif
+    exec 'silent keepalt belowright split ' . escape(s:buf_name, ' ')
     setlocal noswapfile nobuflisted nospell nowrap modifiable
     setlocal buftype=nofile bufhidden=hide
     1,$d
