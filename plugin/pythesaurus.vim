@@ -30,6 +30,7 @@ function! s:Lookup(word)
     exec 'resize ' . line('$')
     setlocal nomodifiable filetype=pythesaurus
     nnoremap <silent> <buffer> q :q<CR>
+    nnoremap <silent> <buffer> <ESC> :q<CR>
 endfunction
 
 command! PyThesaurusCurrentWord :call <SID>Lookup(expand('<cword>'))
