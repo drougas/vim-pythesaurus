@@ -6,7 +6,7 @@ import urllib2
 import vim
 
 word = vim.eval('a:word').lower().strip()
-response = urllib2.urlopen('http://thesaurus.com/browse/' + word)
+response = urllib2.urlopen('http://www.thesaurus.com/browse/' + word)
 
 ttl_re = re.compile(r'class="ttl">(.*)<')
 layer_re = re.compile(r'layer disabled')
