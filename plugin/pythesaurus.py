@@ -8,11 +8,11 @@ import vim
 word = vim.eval('a:word').lower().strip()
 response = urllib2.urlopen('http://www.thesaurus.com/browse/' + word)
 
-ttl_re = re.compile(r'class="ttl">(.*)<')
+ttl_re = re.compile(r'class="ttl">([^<]*)<')
 layer_re = re.compile(r'layer disabled')
 words_re = re.compile(r'words-gallery')
 div_re = re.compile(r'</div>')
-text_re = re.compile(r'class="text">(.*)<')
+text_re = re.compile(r'class="text">([^<]*)<')
 relevancy_re = re.compile(r'relevancy-list')
 holder_re = re.compile(r'list-holder')
 
